@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimaSky | Previsão do Tempo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="page">
+
+        <header>
+            <div class="brand">
+                <span class="brand-icon">☀️</span>
+                <span>ClimaSky</span>
+            </div>
+            <p class="subtitle">
+                O clima da sua cidade, em tempo real.
+            </p>
+        </header>
+
+        <section class="panel">
+
+            
+            <form class="search" id="searchForm">
+
+                <div class="input-container">
+                    <input
+                        id="cityInput"
+                        type="search"
+                        placeholder="Digite uma cidade..."
+                        autocomplete="off"
+                        required
+                    >
+
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+
+                <button id="searchButton" type="submit">
+                    Buscar clima
+                </button>
+
+            </form>
+
+
+            <div id="message" class="message" role="status">
+                🌤️ Pesquise uma cidade do Brasil ou de qualquer lugar do mundo.
+            </div>
+
+            <section class="weather" id="weather">
+
+                <div class="place">
+                    <h2 id="cityName"></h2>
+                    <p id="regionName"></p>
+                </div>
+
+                <div class="main-weather">
+
+                    <img
+                        id="weatherIcon"
+                        class="weather-icon"
+                        alt="Ícone do clima"
+                    >
+
+                    <div>
+                        <div class="temperature">
+                            <span id="temperature">--</span>°
+                        </div>
+
+                        <div class="condition" id="condition"></div>
+                    </div>
+
+                </div>
+
+                <div class="grid">
+
+                    <div class="metric">
+                        <div class="symbol">🌡️</div>
+                        <span class="label">Sensação térmica</span>
+                        <strong id="feelsLike">-- °C</strong>
+                    </div>
+
+                    <div class="metric">
+                        <div class="symbol">💧</div>
+                        <span class="label">Umidade do ar</span>
+                        <strong id="humidity">--%</strong>
+                    </div>
+
+                    <div class="metric">
+                        <div class="symbol">💨</div>
+                        <span class="label">Velocidade do vento</span>
+                        <strong id="wind">-- km/h</strong>
+                    </div>
+
+                </div>
+
+                <!-- Previsão para os próximos dias -->
+                <section class="forecast-section">
+                    <h2>📅 Próximos 7 dias</h2>
+
+                    <div id="forecastContainer" class="forecast-container">
+                    </div>
+                </section>
+
+                <!-- Gráfico de temperatura -->
+                <section class="chart-section">
+                    <h2>🌡️ Temperatura durante o dia</h2>
+
+                    <p>Variação da temperatura ao longo das 24 horas.</p>
+
+                    <div class="chart-container">
+                        <canvas id="temperatureChart"></canvas>
+                    </div>
+                </section>
+
+
+                <p class="updated" id="updated"></p>
+
+            </section>
+        </section>
+
+        <footer>
+            Dados meteorológicos por
+            <a href="https://www.weatherapi.com/" target="_blank">
+                WeatherAPI.com
+            </a>
+        </footer>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
